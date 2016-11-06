@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SmartFare">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="">
+
+		<title>SmartFare::Dashboard</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom styles for SmartFare -->
+		<link href="../css/dashboard.css" rel="stylesheet">
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+					<a class="navbar-brand" href="#">
+						<img src="../img/logowhite.png">
+					</a>
+				</div>
+
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/">Home</a></li>
+						<li><a href="/admin/trips">Viagens</a></li>
+						<li><a href="/admin/users">Usuários</a></li>
+						<li><a href="/admin/vehicles">Veículos</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			<div class="row">
+				
+				<div class="col-sm-12 col-md-12 main">
+			
+					<h1 class="page-header">Painel de Controle</h1>
+
+					<h2 class="sub-header">Veículos</h2>
+					
+					<div class="table-responsive">
+
+						<table class="table table-striped">
+						
+							<thead>
+								<tr>
+									<th>ID Veículo</th>
+									<th>ID Linha</th>
+									<th>Nome da linha</th>
+									<th>Saída da garagem</th>
+									<th>Entrada da garagem</th>
+								</tr>
+							</thead>
+
+							<tbody ng-controller="vehiclesTableController">
+								<tr ng-repeat="vehicle in vehicles">
+									<td>{{ vehicle.vehicleId }}</td>
+									<td>{{ vehicle.routeId }}</td>
+									<td>{{ vehicle.routeName }}</td>
+									<td>{{ vehicle.startDate | date: 'dd/MM/yyyy hh:mm:ss' }}</td>
+									<td>{{ vehicle.endDate | date: 'dd/MM/yyyy hh:mm:ss' }}</td>
+								</tr>
+							</tbody>
+
+						</table>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- JavaScript libraries and custom code -->
+		<!-- ========================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- AngularJS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+		<!-- Bootstrap -->
+		<!--<script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>-->
+		<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+		<!-- Custom JS for SmartFare-->
+		<script type="text/javascript" src="../js/controllers.js"></script>
+		</body>
+</html>

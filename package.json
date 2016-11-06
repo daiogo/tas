@@ -1,0 +1,33 @@
+{
+  "name": "tas",
+  "version": "0.1.0",
+  "description": "Terminal de Atendimento Simplificado",
+  "engines": {
+    "node": "4.4.5"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "1.12.4",
+    "express": "4.12.3",
+    "express-session": "1.11.2",
+    "http-status": "0.1.8",
+    "mongoose": "4.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daiogo/tas"
+  },
+  "keywords": [
+    "smartfare",
+    "heroku",
+    "mongodb",
+    "express",
+    "angular",
+    "node",
+    "mean"
+  ],
+  "license": "Apache-2.0"
+}
