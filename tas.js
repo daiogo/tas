@@ -10,8 +10,7 @@ var measurementSchema = require('./db/schemas/measurement');
 var complaintSchema = require('./db/schemas/complaint');
 
 // Connects mongoose to mongodb service
-mongoose.connect('mongodb://tas:5m4r7f4r3@ds053216.mlab.com:53216/tas');
-
+mongoose.connect('mongodb://tas:5m4r7f4r3@ds145667.mlab.com:45667/tas');
 // Creates mongoose models for each schema
 // Parameters are: model name, schema, collection name
 var Measurement = mongoose.model('Measurement', measurementSchema, 'measurements');
@@ -105,17 +104,16 @@ app.use(express.static(__dirname + '/public'));
 		var measurementDoc = new Measurement({
 			sensorId: req.body.sensorId,
 			timestamp: req.body.timestamp,
-			measurement: req.body.latitude
+			measurement: req.body.measurement
 		});
 
-		complaintDoc.save(function(error) {
+		measurementDoc.save(function(error) {
 			if (error) {
 				console.log(error);
 				res.send('error');
 			} else {
 				res.send('ok');
 				console.log('Saved measurement!');
-				//res.send("ok");
 			}
 		});
 
